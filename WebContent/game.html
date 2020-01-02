@@ -1,17 +1,31 @@
 <html>
-Game
+<title>Game</title>
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 
 <script>
 	var canvas;
 	var canvasContext;
+	var ballX=50;
 	
 	window.onload = function(){
 		console.log("This is a javascript game");
 		canvas=document.getElementById("gameCanvas");
 		canvasContext=canvas.getContext("2d");
+		draw();
+		draw();
+		draw();
+
+	}
+	
+	function draw() {
+		ballX+=100;
+		console.log(ballX);
 		canvasContext.fillStyle="black";
 		canvasContext.fillRect(0,0,canvas.width,canvas.height);
+		canvasContext.fillStyle="white";
+		canvasContext.fillRect(200,200,200,200);
+		canvasContext.fillStyle="red";
+		canvasContext.fillRect(ballX,100,10,10);
 	}
 </script>
 </html>
